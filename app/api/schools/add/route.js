@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import connect from "@/lib/mongodb";
-import School from "@/lib/modals/teacher";
 
 
 
