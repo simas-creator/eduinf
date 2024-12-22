@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import FilterSchools from "@/components/FilterSchools";
 import TeacherCase from "@/components/TeacherCase";
+import Link from 'next/link';
 const TeachersPage = () => {
   const [teachers, setTeachers] = useState([]);
   const [error, setError] = useState(null);
@@ -45,7 +46,12 @@ const TeachersPage = () => {
           </li>
         ))}
       </ul>
-      
+      <div className="container mx-auto text-center p-10">
+          <Link 
+          href="/prideti-mokykla"
+          className='text-lg font-monserrat font-bold text-primary'
+        >Nerandate mokyklos ar universiteto?</Link>
+    </div>
     </div>
   );
 };

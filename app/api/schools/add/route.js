@@ -1,43 +1,31 @@
 import { NextResponse } from "next/server";
 import connect from "@/lib/mongodb";
+import School from "@/lib/modals/school";
 
 
 
 export async function POST(req) {
   try {
-    // Ensure a connection to the database
     await connect();
 
-
-
-    const { name, surname, subject, school, review, image, rating} = await req.json();
-    console.log("Received data:", { name, surname, subject, school, review, image, rating });
-    // Validate required fields
-    if (!name || !surname || !subject || !school) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
-    }
-    const newTeacher = new Teacher({
+    const {name, apskritis, mu } = await req.json();
+    console.log("Received data:", { name, apskritis, mu });  
+    
+    const newSchool = new School({
       name,
-      surname,
-      subject,
-      school,
-      comment: review,
-      imageUrl: image,
-      rating
+      apskritis,
+      mu,
+      teachers: []
     });
 
     // Save the document to the database
-    const savedTeacher = await newTeacher.save();
+    const savedSchool = await newSchool.save();
 
-    // Return the saved document as a response
-    return NextResponse.json({ success: true, teacher: savedTeacher });
+    return NextResponse.json({ success: true, school: savedSchool });
   } catch (error) {
-    console.error("Error adding teacher:", error.message);
+    console.error("Error adding a school", error.message);
     return NextResponse.json(
-      { error: "An error occurred while saving teacher data" },
+      { error: "An error occurred while saving school data" },
       { status: 500 }
     );
   }

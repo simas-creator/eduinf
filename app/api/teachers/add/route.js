@@ -10,7 +10,6 @@ export async function POST(req) {
     await connect();
 
 
-
     const { name, surname, subject, school, review, image, rating} = await req.json();
     console.log("Received data:", { name, surname, subject, school, review, image, rating });
     // Validate required fields
