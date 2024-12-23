@@ -2,7 +2,7 @@ import {NextResponse} from 'next/server';
 import connect from "@/lib/mongodb"
 import User from '@/lib/modals/user'
 import { Types } from 'mongoose';
-const ObjectId = require('mongoose').Types.ObjectId;
+const ObjectId = Types.ObjectId;
 export const GET = async () => {
     try {
         await connect();

@@ -29,6 +29,6 @@ export const GET = async (request) => {
 
         return NextResponse.json({status: 200, schools})
     } catch (error) {
-        
+        return NextResponse.json({status: 500, error: error.message})
     }
 } 
