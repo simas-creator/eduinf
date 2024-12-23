@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import FilterSchools from "@/components/FilterSchools";
+import FilterTeachers from "@/components/FilterTeachers";
 import TeacherCase from "@/components/TeacherCase";
 import Link from 'next/link';
 const TeachersPage = () => {
@@ -29,8 +29,8 @@ const TeachersPage = () => {
 
   return (
     <div>
-    <FilterSchools/>
-      <h1>Teachers</h1>
+    <h1 className="font-title text-center text-3xl p-5">Lietuvos mokytojai</h1>
+    <FilterTeachers/>
       {error && <p>{error}</p>}
       <ul>
         {teachers.map((teacher) => (

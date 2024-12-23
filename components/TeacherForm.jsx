@@ -90,10 +90,11 @@ const AddTeacher = () => {
   };
   
   return (
-    <section className="flex justify-between">
+    <section className="flex justify-between flex-col px-4 py-8 max-w-3xl mx-auto">
+    <h1 className='text-center text-3xl font-title'>Pridėti mokytoją</h1>
     <form
       onSubmit={handleSubmit}
-      className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg space-y-4 my-5"
+      className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg space-y-4 my-5 font-title"
     >
       <div className="flex gap-10">
         <div className="space-y-2">

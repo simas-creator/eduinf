@@ -54,7 +54,18 @@ function Nav() {
                   <Link href="/prideti-mokytoja">Pridėti</Link>
                   </li>
                   <li>
-                    <Link href="/perziureti-ivertinimus">Peržiūrėti</Link>
+                    <Link href="/perziureti-mokytojus">Peržiūrėti</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a>Mokyklos ir universitetai</a>
+                <ul className="p-2">
+                  <li>
+                  <Link href="/prideti-mokykla">Pridėti</Link>
+                  </li>
+                  <li>
+                    <Link href="/mokyklu-ivertinimai">Peržiūrėti</Link>
                   </li>
                 </ul>
               </li>
@@ -88,7 +99,20 @@ function Nav() {
                 <Link href="/prideti-mokytoja">Pridėti</Link>
                 </li>
                 <li>
-                <Link href="/perziureti-ivertinimus">Peržiūrėti</Link>
+                <Link href="/perziureti-mokytojus">Peržiūrėti</Link>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Mokyklos ir universitetai</summary>
+              <ul className="p-2">
+                <li>
+                <Link href="/prideti-mokykla">Pridėti</Link>
+                </li>
+                <li>
+                <Link href="/mokyklu-ivertinimai">Peržiūrėti</Link>
                 </li>
               </ul>
             </details>

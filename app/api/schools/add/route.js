@@ -8,14 +8,15 @@ export async function POST(req) {
   try {
     await connect();
 
-    const {name, apskritis, mu } = await req.json();
-    console.log("Received data:", { name, apskritis, mu });  
+    const {name, apskritis, mu, image } = await req.json();
+    console.log("Received data:", { name, apskritis, mu, image });  
     
     const newSchool = new School({
       name,
       apskritis,
       mu,
-      teachers: []
+      teachers: [],
+      imgUrl: image,
     });
 
     // Save the document to the database

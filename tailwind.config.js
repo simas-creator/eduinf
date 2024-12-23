@@ -26,14 +26,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        title: ["Montserrat", "sans-serif"],
+        title: ["Montserrat", "sans-serif"], 
+        body: ["Roboto", "sans-serif"], 
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--background)", 
+        foreground: "var(--foreground)", 
       },
     },
-  },
+  }
+  ,
   plugins: [
     require('daisyui'),
   ],
