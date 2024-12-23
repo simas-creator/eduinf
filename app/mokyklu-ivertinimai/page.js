@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import FilterSchools from "@/components/FilterSchools"
 import SchoolCase from "@/components/SchoolCase"
-const page = () => {
+const Page = () => {
     let [schools, setSchools] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -43,4 +43,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
