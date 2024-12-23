@@ -45,13 +45,7 @@ const TeachersPage = () => {
             />
           </li>
         ))}
-      </ul>
-      <div className="container mx-auto text-center p-10">
-          <Link 
-          href="/prideti-mokykla"
-          className='text-lg font-monserrat font-bold text-primary'
-        >Nerandate mokyklos ar universiteto?</Link>
-    </div>
+      </ul>s
     </div>
   );
 };
