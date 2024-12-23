@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import FilterTeachers from "@/components/FilterTeachers";
 import TeacherCase from "@/components/TeacherCase";
-import Link from 'next/link';
 const TeachersPage = () => {
   const [teachers, setTeachers] = useState([]);
   const [error, setError] = useState(null);
