@@ -1,38 +1,26 @@
-import  mongoose, { Schema, model } from  "mongoose";
+import  mongoose from  "mongoose";
 
-export interface UserDocument {
-  _id: string;
-  email: string;
-  password: string;
-  name: string;
-  phone: string;
-  image: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-const UserSchema = new Schema<UserDocument>({
+const userSchema = new mongoose.Schema({
+    firstName: {type: String, required: true},
+    lastName: {type: String, required: true},
     email: {
       type: String,
       unique: true,
-      required: [true, "Email is required"],
-      match: [
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        "Email is invalid",
-      ],
+      required: true,
+      match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
     },
     password: {
       type: String,
-      required: true
+      select: false
     },
-    name: {
+    role: {
       type: String,
-      required: [true, "Name is required"]
-    }
+      default: "user",
+    },
+    authProviderId: {type: String}
   },
   {
     timestamps: true,
   }
 );
-const  User  =  mongoose.models?.User  ||  model<UserDocument>('User', UserSchema);
-export  default  User;
+export const User  =  mongoose.models?.User  ||  mongoose.model("User", userSchema);

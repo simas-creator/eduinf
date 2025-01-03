@@ -123,7 +123,12 @@ function Nav() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a href="/prisijungti" className="btn btn-outline btn-accent">
+        <a href="/skydelis" className="btn btn-outline btn-primary">
+          Paskyra
+        </a>
+      </div>
+      <div className="navbar-end">
+        <a href="/prisijungti" className="btn btn-outline btn-primary">
           Prisijungti
         </a>
       </div>
