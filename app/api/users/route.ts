@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import connect from "@/lib/mongodb";
 import {User} from "@/lib/modals/user";
-
+import {hash} from "bcryptjs";
 
 
 export async function POST(req: any) {
@@ -24,12 +24,12 @@ export async function POST(req: any) {
       return NextResponse.json(
         { error: "Paskyra su šiuo el. paštu jau egzistuoja" },
         { status: 400 });}
-
+    const hashedPassword = await hash(password, 12);  
     const newUser = new User({
       firstName,
       lastName,
       email,
-      password,
+      password: hashedPassword,
     });
 
     // Save the document to the database
@@ -38,7 +38,6 @@ export async function POST(req: any) {
     // Return the saved document as a response
     return NextResponse.json({ success: true, user: savedUser});
   } catch (error) {
-    console.error("Error creating user:", error);
     return NextResponse.json(
       { error: "Nepavyko sukurti paskyros"},
       { status: 500 }
