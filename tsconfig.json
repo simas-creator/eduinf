@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     "app/layout.js",
     "app/page.jsx"
-, "tailwind.config.js"  ],
+, "tailwind.config.js", "app/registracija/page.jsx"  ],
   "exclude": ["node_modules"]
 }

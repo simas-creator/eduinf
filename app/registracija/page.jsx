@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation";
 const Register = () => {
     const router = useRouter();
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e) => {
         const firstName = e.target.firstName.value;
         const lastName = e.target.lastName.value;
         const email = e.target.email.value;
