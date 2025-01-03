@@ -13,25 +13,18 @@ const Login = () => {
 
     if (!email || !password) {
       // Optionally handle missing fields
-      console.error("Email and password are required.");
+      setError("Užpildykite visus laukelius")
       return;
     }
 
-    const response = await fetch('/api/login', {
+    await fetch('/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', // Ensure the correct content type is set
       },
       body: JSON.stringify({ email, password }), // Send the data as JSON
     });
-    redirect("/")
-    const result = await response.json();
-    console.log(result);
-    if (response.ok) {
-      setError("")
-    } else {
-      setError("Neteisingas slaptažodis")
-    }
+    redirect("/");
   }
 
   return (

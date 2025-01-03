@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  unstable_allowDynamic: [
+    '/lib/utilities.js', 
+    '**/node_modules/function-bind/**',
+    '@lib/mongodb',
+    'app/api/login/route.ts',
+  ],
 };
 
 export default nextConfig;
